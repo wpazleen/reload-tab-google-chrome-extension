@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Auto Reloader</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="icon">🔄</div>
+            <h1>Tab Auto Reloader</h1>
+        </div>
+        
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="main">Auto Reloader</button>
+            <button class="tab-btn" data-tab="about">About Me</button>
+        </div>
+        
+        <div class="tab-content active" id="main-tab">
+            <div class="main-content">
+            <div class="current-tab">
+                <h3>Current Tab</h3>
+                <div class="tab-info">
+                    <span class="tab-title" id="currentTabTitle">Loading...</span>
+                    <span class="tab-url" id="currentTabUrl">Loading...</span>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="time-selector">
+                    <label for="reloadTime">Reload Interval:</label>
+                    <select id="reloadTime">
+                        <option value="5">5 seconds</option>
+                        <option value="10" selected>10 seconds</option>
+                        <option value="15">15 seconds</option>
+                        <option value="30">30 seconds</option>
+                        <option value="60">1 minute</option>
+                        <option value="120">2 minutes</option>
+                        <option value="300">5 minutes</option>
+                    </select>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="startBtn" class="btn btn-primary">
+                        <span class="btn-icon">▶️</span>
+                        Start Auto Reload
+                    </button>
+                    <button id="stopBtn" class="btn btn-secondary" disabled>
+                        <span class="btn-icon">⏹️</span>
+                        Stop Auto Reload
+                    </button>
+                </div>
+            </div>
+
+            <div class="status">
+                <div class="status-indicator" id="statusIndicator">
+                    <span class="status-dot"></span>
+                    <span class="status-text" id="statusText">Inactive</span>
+                </div>
+                <div class="next-reload" id="nextReload" style="display: none;">
+                    Next reload in: <span id="countdown">--</span>s
+                </div>
+            </div>
+
+            <div class="features">
+                <h3>Features</h3>
+                <ul>
+                    <li>✅ Auto-reload current tab</li>
+                    <li>✅ Customizable intervals</li>
+                    <li>✅ Keep browser active</li>
+                    <li>✅ Real-time countdown</li>
+                </ul>
+            </div>
+        </div>
+        </div>
+
+        <div class="tab-content" id="about-tab">
+            <div class="about-content">
+                <div class="profile-section">
+                    <div class="profile-avatar">
+                        <div class="avatar-circle">
+                            <span class="avatar-text">S</span>
+                        </div>
+                    </div>
+                    <div class="profile-info">
+                        <h2>sabbirsam</h2>
+                        <p class="profile-title">WordPress Developer & Plugin Creator</p>
+                        <p class="profile-description">
+                            Passionate developer specializing in WordPress themes, plugins, and browser extensions. 
+                            Creating innovative solutions to enhance user experience.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="links-section">
+                    <h3>Connect With Me</h3>
+                    <div class="link-cards">
+                        <div class="link-card wordpress" data-url="https://profiles.wordpress.org/wpazleen/">
+                            <div class="link-icon">🔌</div>
+                            <div class="link-info">
+                                <h4>WordPress Profile</h4>
+                                <p>Plugins & Themes</p>
+                                <span class="link-url">profiles.wordpress.org/wpazleen</span>
+                            </div>
+                            <div class="link-arrow">→</div>
+                        </div>
+
+                        <div class="link-card website" data-url="https://wpazleen.com/">
+                            <div class="link-icon">🌐</div>
+                            <div class="link-info">
+                                <h4>Official Website</h4>
+                                <p>Portfolio & Services</p>
+                                <span class="link-url">wpazleen.com</span>
+                            </div>
+                            <div class="link-arrow">→</div>
+                        </div>
+
+                        <div class="link-card fiverr" data-url="https://www.fiverr.com/users/techsam_bd/portfolio">
+                            <div class="link-icon">💼</div>
+                            <div class="link-info">
+                                <h4>Fiverr Portfolio</h4>
+                                <p>Freelance Services</p>
+                                <span class="link-url">fiverr.com/techsam_bd</span>
+                            </div>
+                            <div class="link-arrow">→</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-section">
+                    <h3>Expertise</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <span class="skill-icon">⚡</span>
+                            <span class="skill-name">WordPress Development</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-icon">🔧</span>
+                            <span class="skill-name">Plugin Creation</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-icon">🎨</span>
+                            <span class="skill-name">Theme Design</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-icon">🌐</span>
+                            <span class="skill-name">Browser Extensions</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div class="footer">
+            <p>Developed by <strong>sabbirsam</strong></p>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
